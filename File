@@ -1,0 +1,1125 @@
+
+<html>
+<head>
+<title> Zscaler Tweak </title>
+
+<h1 style="text-align: center;"><span style="text-decoration: underline;"><strong><span style="color: #FFFFFF; text-decoration: underline;">Zscaler Documentation Tool</span></strong></span></h1>
+
+<!--
+**************************************************************************************************************************************************************************************************
+
+background-color:"#282828";
+//-->
+<style type="text/css">
+body
+{
+
+<!--background-color:"#2F4F4F";//-->
+background-color:#282828;
+}
+h1
+{
+color:#282828;
+text-align:center;
+}
+p
+{
+font-family:"Times New Roman";
+font-size:8px;
+}
+strong
+{
+color:White}
+b
+{
+color:White
+}
+h2
+{
+color:#White;
+text-align:center;
+}
+p
+{
+font-family:"Times New Roman";
+font-size:8px;
+}
+strong
+{
+color:#White
+}
+b
+{
+color:#0cff14
+}
+h3
+{
+color:White;
+text-align:center;
+}
+p
+{
+font-family:"Times New Roman";
+font-size:8px;
+}
+strong
+{
+color:White
+}
+b
+{
+color:White
+}
+</style>
+<style>
+example1 {
+  font: 8px/22px Garamond, Georgia, serif;
+  color: Orange;
+  }
+.bold {
+  font-weight: bold;
+  }
+.italic {
+  font-style: italic;
+  }
+</style>
+<script>
+var m = new Date();
+var d1 = new Date();
+var y = new Date();
+
+var timer = null
+function start(){
+    var time = new Date()
+    var hours = time.getHours()
+    var minutes = time.getMinutes()
+    minutes=((minutes < 10) ? "0" : "") + minutes
+    var seconds = time.getSeconds()
+    seconds=((seconds < 10) ? "0" : "") + seconds
+    var clock = hours + ":" + minutes + ":" + seconds
+    document.forms[0].display.value = clock
+    timer = setTimeout("start()",1000)
+}
+function techid() {
+	document.getElementById("techst").value = arguments[0];
+};
+
+</script>
+<script language="javascript">
+document.onmousedown=disableclick;
+status="Right Click Disabled";
+Function disableclick(e)
+{
+  if(event.button==2)
+   {
+     alert(status);
+     return false;	
+   }
+}
+</script>
+
+
+<!--
+
+*************************************************************************************************
+	*		End of style sheets. Any further style sheets can be added above here.  	*		
+	*************************************************************************************************
+
+
+
+//-->
+
+<script language="javascript" type="text/javascript">
+<!--
+//-------------------------------------------------------------------------------------
+//          DOCUMENTATION TEMPLATE
+//          By: Rohannn
+//          
+//     ********************************************************************************     
+//     *     Released under the GNU General Public License                            *
+//     *     This program is free software: you can redistribute it and/or modify     *
+//     *     it under the terms of the GNU General Public License as published by     *
+//     *     the Free Software Foundation, either version of the License, or        *
+//     *     (at your option) any later version.                                      *
+//     *                                                                              *
+//     *     This program is distributed in the hope that it will be useful,          *
+//     *     but WITHOUT ANY WARRANTY; without even the implied warranty of           *
+//     *     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the            *
+//     *     GNU General Public License for more details.                             *
+//     *                                                                              *
+//     *     You should have received a copy of the GNU General Public License        *
+//     *     along with this program.  If not, see <http://www.gnu.org/licenses/>.    *
+//     ********************************************************************************
+//
+//-------------------------------------------------------------------------------------
+
+https://cdn.jsdelivr.net/npm/cookie-bar/cookiebar-latest.min.js
+
+
+//********************************************************************************************
+//**	All global variables are disclosed here so that they need not be repeated. However  **
+//**	since the customer name might change with every case, it is prudent to have both    **
+//**	the TSE name and customer name to be gathered for every email template.		    **
+//********************************************************************************************
+
+	var externalkb = "https://knowledge.Zscaler.com/external/article/";
+
+
+//*******************************************************************************************
+//				CALCULATE DATE AND TIME
+//*******************************************************************************************
+
+function timenow()
+{
+
+
+var month=new Array(12);
+month[0]="Jan";
+month[1]="Feb";
+month[2]="Mar";
+month[3]="Apr";
+month[4]="May";
+month[5]="Jun";
+month[6]="Jul";
+month[7]="Aug";
+month[8]="Sep";
+month[9]="Oct";
+month[10]="Nov";
+month[11]="Dec";
+
+
+var time = new Date()
+var hours = time.getHours()
+var minutes = time.getMinutes()
+minutes=((minutes < 10) ? "0" : "") + minutes
+hours=((hours < 10) ? "0" : "") + hours
+
+if(hours>12)
+{
+var hr = hours-12
+var am = " pm"
+}
+else
+{
+var hr = hours
+var am = " am"
+}
+
+
+var clock = hr + ":" + minutes + am
+
+timer = setTimeout("start()",1000)
+
+var date = d1.getDate();
+var month = month[m.getMonth()];
+
+document.forms[0].the_time.value = month+'-'+date+','+' '+clock+' '+'IST';
+
+}
+
+
+
+
+//*******************************************************************************************
+//			RESET TIME
+//*******************************************************************************************
+
+function resettime()
+
+{
+
+document.forms[0].the_time.value = '';
+
+}
+
+
+
+
+//*******************************************************************************************
+//			START OF CALLINTERACTION TEMPLATE
+//*******************************************************************************************
+function callinteraction()
+{
+	var call = "\nSession Time: "
+	var voice1 = "Contact Number: ";
+	var voice2 = "\n \n----------------------------------------------------------------------\n\nTroubleshooting Steps Performed:\n\n";
+	var voice3 = "\n\n----------------------------------------------------------------------\n\nSummary of Resolution: \n\n";
+	var voice4 = "\n\n----------------------------------------------------------------------\n"
+	var voice5 = "\nIssue: "
+
+
+
+	
+	document.forms[1].sepcasenote.value = call+document.forms[0].the_time.value+'\n'+voice1+document.forms[0].phoneno.value+voice5+document.forms[0].sepissue.value+voice2+document.forms[0].septrouble.value+voice3+document.forms[0].resummary.value+voice4;
+}
+
+//*******************************************************************************************
+//			END OF CALLINTERACTION TEMPLATE
+//*******************************************************************************************
+
+//*******************************************************************************************
+//			START OF VOICEMAIL TEMPLATE
+//*******************************************************************************************
+function voicemailtemplate()
+{
+	var call = "Unable to reach the customer. "
+	var voice1 = "Left voicemail ";
+	var voice2 = "";
+
+
+
+	
+	document.forms[1].sepcasenote.value = call+document.forms[0].the_time.value+'\n'+voice1+document.forms[0].phoneno.value+voice2;
+}
+
+//*******************************************************************************************
+//			END OF VOICEMAIL TEMPLATE
+//*******************************************************************************************
+
+
+//*******************************************************************************************
+//			START OF NO VOICEMAIL TEMPLATE
+//*******************************************************************************************
+
+function novoicemailtemplate()
+{
+	var call = "Unable to reach the customer. "
+	var voice3 = "No voicemail ";
+	var voice4 = "";
+	
+	document.forms[1].sepcasenote.value = call+document.forms[0].the_time.value+'\n'+voice3+document.forms[0].phoneno.value+voice4;
+}
+
+//*******************************************************************************************
+//			END OF NO VOICEMAIL TEMPLATE
+//*******************************************************************************************
+
+
+//*******************************************************************************************
+//			START OF ZOOM TEMPLATE
+//*******************************************************************************************
+
+function WEBINVITE()
+
+{
+	var tsename = "";
+	var Voicemail1 = "Hi ";
+	var Voicemail2 = "Greetings for the Day! ";
+	var Voicemail32 = "Please click on the below link to join the Zoom meeting:";
+	var Voicemail33 = " ------- PASTE YOUR ZOOM MEETING LINK ---------\n";
+	var Voicemail41 = "This will be a Read-Only session. Care must be taken during the entire session to prevent the display of any private, confidential, proprietary or otherwise sensitive information.";
+	var Voicemail5 = ".";
+	var Voicemail6 = "Care must be taken during the entire session to prevent the display of any private, confidential, proprietary or otherwise sensitive information.";
+	var thanks = "Thanks for using Zscaler Support Services!";
+	var regards = "Regards,";
+	var signature = "Zscaler Support Engineer Level 1 \nWorking Hours: 8 AM - 5 PM PST (Monday - Friday)\nIf any concerns, please feel free to contact my Manager, \nRoyal Arun Kumar - Royal.kumar@zscaler.com\nNeed support outside of office hours? \nContact - https://help.zscaler.com/phone-support\n\n";
+
+
+	document.forms[1].sepcasenote.value = Voicemail1+document.forms[0].custname.value+','+'\n\n'+Voicemail2+'\n\n'+Voicemail32+'\n\n'+Voicemail33+'\n\n'+Voicemail41+'\n\n'+thanks+'\n\n'+regards+'\n\n'+tsename+document.forms[0].tseid.value+'\n'+signature;
+
+}
+
+//*******************************************************************************************
+//			End OF Zoom TEMPLATE
+//*******************************************************************************************
+
+//*******************************************************************************************
+//			START OF CHASER 1 TEMPLATE
+//*******************************************************************************************
+
+function Chaser1()
+
+{
+	var tsename = ".";
+	var Voicemail1 = "Hi ";
+	var Voicemail2 = "I hope you're having a wonderful day!";
+	var Voicemail4 = "I tried reaching you over the phone (";
+	var Voicemail5 = ") regarding your case number: ";
+	var Voicemail6 = "The reason I called was to provide you with an update on the next steps.\n\n----------------------------------------------------------------------";
+	var Voicemail8 = ""; 
+	var Voicemail9 = "I am writing today to follow up on our case and the current status on your end. Let me know if any support is required from my side and I will be glad to assist you";
+	var Voicemail15 = "Looking forward to working with you at the earliest.";
+	var thanks = "Thanks for using Zscaler Support Services!";
+	var regards = "Regards,\n";
+	var signature = "Zscaler Support Engineer Level 1 \nWorking Hours: 8 AM - 5 PM PST (Monday - Friday)\nIf any concerns, please feel free to contact my Manager, \nRoyal Arun Kumar - Royal.kumar@zscaler.com\nNeed support outside of office hours? \nContact - https://help.zscaler.com/phone-support";
+	var callback3=" My working hours are between {0600-1500 hrs (GMT +5:30)}.";
+
+	document.forms[1].sepcasenote.value = Voicemail1+document.forms[0].custname.value+','+'\n\n'+Voicemail2+'\n\n'+Voicemail4+document.forms[0].phoneno.value+Voicemail5+document.forms[0].sepcaseid.value+'\n\n'+Voicemail6+'\n\n'+Voicemail9+tsename+'\n\n'+Voicemail15+'\n\n'+thanks+'\n\n'+regards+'\n'+document.forms[0].tseid.value+'\n'+signature;
+
+}
+
+//*******************************************************************************************
+//			END OF CHASER 1 TEMPLATE
+//*******************************************************************************************
+
+
+//*******************************************************************************************
+//			START OF CHASER 2 TEMPLATE
+//*******************************************************************************************
+
+function Chaser2()
+
+{
+
+	var tsename = ".";
+	var Voicemail1 = "Hi ";
+	var Voicemail2 = "Hope you are doing well!";
+	var Voicemail3 = "I attempted to contact you today over the phone (";
+	var Voicemail4 = ") with regard to case number: ";
+	var Voicemail5 = ". Unfortunately, we were unable to reach you over the phone for the past couple of days.";
+	var Voicemail6 = "The reason I called was to provide you with an update on the next steps.\n\n----------------------------------------------------------------------";
+	var Voicemail7 = "I am writing today to follow up on our case and the current status on your end. Let me know if any support is required from my side and I will be glad to assist you.";
+	var Voicemail9 = "Looking forward to working with you at the earliest.";
+	var thanks = "Thanks for using Zscaler Support Services!";
+	var regards = "Regards,\n";
+	var signature = "Zscaler Support Engineer Level 1 \nWorking Hours: 8 AM - 5 PM PST (Monday - Friday)\nIf any concerns, please feel free to contact my Manager, \nRoyal Arun Kumar - Royal.kumar@zscaler.com\nNeed support outside of office hours? \nContact - https://help.zscaler.com/phone-support";
+	var callback3=" My working hours are between {0600-1500 hrs (GMT +5:30)}.";
+
+	document.forms[1].sepcasenote.value = Voicemail1+document.forms[0].custname.value+','+'\n\n'+Voicemail2+'\n\n'+Voicemail3+document.forms[0].phoneno.value+Voicemail4+document.forms[0].sepcaseid.value+Voicemail5+'\n\n'+Voicemail6+'\n\n'+Voicemail7+'\n\n'+Voicemail9+'\n\n'+thanks+'\n\n'+regards+'\n'+document.forms[0].tseid.value+'\n'+signature;
+
+}
+
+//*******************************************************************************************
+//			END OF CHASER 2 TEMPLATE
+//*******************************************************************************************
+
+
+//*******************************************************************************************
+//			START OF CHASER 3 TEMPLATE
+//*******************************************************************************************
+
+function Chaser3()
+
+{
+
+	var tsename = "";
+	var Voicemail1 = "Hi ";
+	var Voicemail2 = "I hope you're having a wonderful day,";
+	var Voicemail3 = "We tried to contact you over the phone today (";
+	var Voicemail4 = "), however was unsuccessful.";
+	var Voicemail5 = "Please let us know if you have an alternate contact to reach you. We will wait for your response till the closing of business today, further which we would soft-close the case.";
+	var Voicemail6 = "You may reply to this email within the next 15 days to get the case back to Open status. Even after closure, you may refer to this case and open a new case to work further on the issue.";
+	var Voicemail7 = "Thank you for being a valued customer of Zscaler.";
+	var Voicemail8 = "Looking forward to work with you at the earliest.";
+	var thanks = "Thanks for using Zscaler Support Services!";
+	var regards = "Regards,\n";
+	var signature = "Zscaler Support Engineer Level 1 \nWorking Hours: 8 AM - 5 PM PST (Monday - Friday)\nIf any concerns, please feel free to contact my Manager, \nRoyal Arun Kumar - Royal.kumar@zscaler.com\nNeed support outside of office hours? \nContact - https://help.zscaler.com/phone-support";
+	var callback3=" My working hours are between {0600-1500 hrs (GMT +5:30)}.";
+
+	document.forms[1].sepcasenote.value = Voicemail1+document.forms[0].custname.value+','+'\n\n'+Voicemail2+'\n\n'+Voicemail3+document.forms[0].phoneno.value+Voicemail4+'\n\n'+Voicemail5+'\n\n'+Voicemail6+'\n\n'+thanks+'\n\n'+regards+'\n'+document.forms[0].tseid.value+'\n'+signature;
+
+}
+
+//*******************************************************************************************
+//			END OF CHASER 3 TEMPLATE
+//*******************************************************************************************
+
+//*******************************************************************************************
+//			START OF CASE CLOSURE TEMPLATE
+//*******************************************************************************************
+
+function caseclosure()
+
+{
+var tsename = "";
+	var Voicemail1 = "Hi ";
+	var Voicemail2 = "Thank you for your confirmation to close the case.";
+	var Voicemail3 = "With this, I hereby proceed with the case closure. If the same issue appears, you can reopen this case by simply sending us the mail via this case.\n\n"
+	var Voicemail4 = "If you require any assistance on other issues or queries, kindly create a new service ticket in the below link.\n"
+	var Voicemail5 = "https://help.zscaler.com/submit-ticket";
+	var Voicemail6 = "Since the issue is resolved, we will proceed to close ticket # ";
+	var Voicemail9 = ". Upon ticket closure, you will receive a brief survey. If you could please take a few minutes, and rate my Service and Support, that will enhance our efforts. You could rate my support experience on this case on a scale of 1 to 10 where 9 & 10 being Positive. We value your feedback, and it is used to help us deliver better service.";
+	var Voicemail7 = "Further, we'll be archiving this case under my ownership but in case you face any further issues, feel free to revert to us on this and we'll be more than happy to assist you. You may reply to this email within the next 15 days to get the ticket back to an open status.";
+	var Voicemail8 = "Thank you for being a valued customer of Zscaler.\n\n";
+	var regards = "Regards,\n";
+	var signature = "Zscaler Support Engineer Level 1 \nWorking Hours: 8 AM - 5 PM PST (Monday - Friday)\nIf any concerns, please feel free to contact my Manager, \nRoyal Arun Kumar - Royal.kumar@zscaler.com\nNeed support outside of office hours? \nContact - https://help.zscaler.com/phone-support";
+
+
+	document.forms[1].sepcasenote.value = Voicemail1+document.forms[0].custname.value+','+'\n\n'+Voicemail2+'\n\n'+Voicemail3+Voicemail4+Voicemail5+'\n\n'+Voicemail6+document.forms[0].sepcaseid.value+Voicemail9+'\n\n'+Voicemail7+'\n\n'+Voicemail8+regards+'\n'+document.forms[0].tseid.value+'\n'+signature;
+
+}
+
+//*******************************************************************************************
+//			END OF CASE CLOSURE TEMPLATE
+//*******************************************************************************************
+
+
+
+//*******************************************************************************************
+//			START OF LOCR TEMPLATE
+//*******************************************************************************************
+
+function locremail()
+{
+	var tsename = "";
+	var resolutionmesg1 = "Hi ";
+	var resolutionmesg2 = "Greetings for the day.";
+	var resolutionmesg3 = "We tried reaching you on DATE_1, DATE_2, DATE_3 but were unable to get further updates/current status of the case. Hence, we shall proceed to soft close this case. This case can be reopened in the next 15 days by simply responding back to this email. And we request you to let us know if there are any queries or further assistance required.";
+	var resolutionmesg4 =  "We will be happy to reopen this case and continue to work from where we left off."; 
+	var thanks = "Looking forward to hearing from you.";
+	var regards = "Thanks & Regards,\n ";
+	var signature1 = "Zscaler Support Engineer Level 1 \nWorking Hours: 8 AM - 5 PM PST (Monday - Friday)\nIf any concerns, please feel free to contact my Manager, \nRoyal Arun Kumar - Royal.kumar@zscaler.com\nNeed support outside of office hours? \nContact - https://help.zscaler.com/phone-support";
+	
+	document.forms[1].sepcasenote.value = resolutionmesg1+document.forms[0].custname.value+','+'\n\n'+resolutionmesg2+'\n\n'+resolutionmesg3+'\n\n'+resolutionmesg4+'\n\n'+regards+'\n'+document.forms[0].tseid.value+'\n'+signature1;
+
+}
+
+//*******************************************************************************************
+//			END OF LOCR TEMPLATE
+//*******************************************************************************************
+
+
+//*******************************************************************************************
+//			START OF FRT TEMPLATE
+//*******************************************************************************************
+
+function frtemail()
+{
+	var tsename = "";
+	var resolutionmesg1 = "Hi Team";
+	var resolutionmesg2 = "Thank you for contacting Zscaler Technical Support.";
+	var resolutionmesg3 = "My name is Rohan Rao, and I'll be assisting you with this case.";
+	var resolutionmesg4 = "I am currently reviewing your quest, please allow me some time to review the information you've provided, and I will update you as soon as it is possible."; 
+	var regards = "Regards,\n";
+	var signature = "Zscaler Support Engineer Level 1 \nWorking Hours: 8 AM - 5 PM PST (Monday - Friday)\nIf any concerns, please feel free to contact my Manager, \nRoyal Arun Kumar - Royal.kumar@zscaler.com\nNeed support outside of office hours? \nContact - https://help.zscaler.com/phone-support";
+	
+	document.forms[1].sepcasenote.value = resolutionmesg1+document.forms[0].custname.value+','+'\n\n'+resolutionmesg2+'\n\n'+resolutionmesg3+'\n\n'+resolutionmesg4+'\n\n'+regards+'\n'+document.forms[0].tseid.value+'\n'+signature;
+
+}
+
+function customemail()
+{
+	var tsename = "";
+	var resolutionmesg1 = "Hi ";
+	var resolutionmesg2 = "I hope you are having a wonderful day!";
+	var regards = "Thanks for using Zscaler Support Services!\n\nRegards,\n";
+	var signature = "Zscaler Support Engineer Level 1 \nWorking Hours: 8 AM - 5 PM PST (Monday - Friday)\nIf any concerns, please feel free to contact my Manager, \nRoyal Arun Kumar - Royal.kumar@zscaler.com\nNeed support outside of office hours? \nContact - https://help.zscaler.com/phone-support";
+	
+	document.forms[1].sepcasenote.value = resolutionmesg1+document.forms[0].custname.value+','+'\n\n'+resolutionmesg2+'\n\n\n\n'+regards+'\n'+document.forms[0].tseid.value+'\n'+signature;
+
+}
+
+//*******************************************************************************************
+//			END OF FRT TEMPLATE
+//*******************************************************************************************
+
+
+
+//*******************************************************************************************
+//*******************************************************************************************
+//************      Function to set a cookie and then to retreive or write data into it    **
+//************      The last function will actually recover data from the cookie to all    **
+//************      fields in the forms. This will actually only store data upto 4KB and   **
+//************      anything more will discard the cookie without truncating any info.	   **
+//*******************************************************************************************
+//*******************************************************************************************
+
+
+
+//********************************************************
+//**	 Use this function to retrieve a cookie.	**
+//********************************************************
+function getCookie(name){
+var cname = name + "=";               
+var dc = document.cookie;             
+    if (dc.length > 0) {              
+    begin = dc.indexOf(cname);       
+        if (begin != -1) {           
+        begin += cname.length;       
+        end = dc.indexOf(";", begin);
+            if (end == -1) end = dc.length;
+            return unescape(dc.substring(begin, end));
+        } 
+    }
+return null;
+}
+
+
+//********************************************************
+//**	 Use this function to save a cookie.		**
+//********************************************************
+
+function setCookie(name, value, expires) 
+{
+document.cookie = name + "=" + escape(value) + "; path=/" +
+((expires == null) ? "" : "; expires=" + expires.toGMTString());
+}
+
+
+
+//********************************************************
+//**	 Use this function to delete a cookie.		**
+//********************************************************
+
+function delCookie(name) 
+{
+document.cookie = name + "=; expires=Thu, 01-Jan-70 00:00:01 GMT" +  "; path=/";
+}
+
+
+
+
+//********************************************************
+//**	 Function to save form element's value.		**
+//********************************************************
+
+function setValue(element) 
+{
+setCookie(element.name, element.value, exp);
+}
+
+var exp = new Date();                                   
+exp.setTime(exp.getTime() + (1000 * 60 * 60 * 24 * 31));
+
+
+
+//************************************************************************************************
+//**	End of cookie retrieve function from here. You only need to copy from here to add  	**
+//**	in to your script. Only make sure that you add the onBlur= getValue(this)		**
+//**	Also make sure you add the correct form and value for the forms in the last		**
+//**	function. getValue(document.<form_name>.<element>);					**
+//************************************************************************************************
+//-->
+
+
+
+//************************************************************************************************
+
+
+
+function change_titlecase(changecase)
+{
+	var str = new String(changecase);
+	str = str.slice(0,1);
+	changecase= str.toUpperCase()+changecase.slice(1);
+}
+
+
+function change_case()
+{
+	var str = new String(document.forms[0].sepissue.value);
+	str = str.slice(0,1);
+	document.forms[0].sepissue.value= str.toUpperCase()+document.forms[0].sepissue.value.slice(1);
+}
+
+
+function add_action_result()
+{
+	var action = "\nACTION: \nRESULT: \n\n";
+	document.forms[0].septrouble.value += action;
+}
+
+
+function add_environment_details()
+{
+	var environment = "Environment Details :\n=====================\n";
+
+	document.forms[1].sepcasenote.value = environment+'No. of SEPM: '+document.forms[0].sepmanager.value+'\n'+'Max. no. of SEP: '+document.forms[0].sepclient.value+'\n'+'No. of Affected SEP: '+document.forms[0].sepclientaff.value+'\nOS on SEPM: '+document.forms[0].sepmOS.value+'\n'+'SES CustomerID: '+document.forms[0].sepcust.value+'\n'+'SES DomainID: '+document.forms[0].sepdom.value+'\n'+'OS on SEP: '+document.forms[0].sepclientOS.value+' '+document.forms[0].sepsp.value+' '+document.forms[0].sepplatform.value+'\n'+'Product Version: '+document.forms[0].sepversion.value+' '+document.forms[0].entsbe.value+'\n'+'Database: '+document.forms[0].sepreport.value;
+
+}
+
+
+
+
+
+
+</script>
+</head>
+
+
+
+<!-- <body bgcolor= "BLACK" > //-->
+
+
+<BODY bgcolor= "#161616" >
+<!body background="https://i.imgur.com/yrRy6XV.jpg">
+
+
+</style>
+
+
+</script>
+
+<!--
+////////////////////////////////////////////////////////////////////////////////////////////////
+************************************************************************************************
+************************************************************************************************
+************************	FORM 1		************************************************
+************************************************************************************************
+************************************************************************************************
+////////////////////////////////////////////////////////////////////////////////////////////////
+//-->
+
+
+
+
+<form name="form1" method="post"  enctype="text/plain" >
+
+
+
+
+
+
+
+<!--
+**********************************************************************************************
+**********************************************************************************************
+**********************************************************************************************
+*************            CASE NO, TIME CAPTURE, CUST NAME AND PHONE NO		**************
+**********************************************************************************************
+**********************************************************************************************
+**********************************************************************************************
+//-->
+
+
+<table BORDER =1 CELLPADDING=5 width="994" align="center" <tr>
+
+
+
+	<td>
+	<B>Case ID:</B> <input name ="sepcaseid" maxlength=18 width=10 title="Enter Case Number" style="background-color:#101010;color:#0cff14; onblur="setValue(this)"> 
+	</td>
+
+<!--
+
+    <TD><B>TSE Name:</B> <INPUT name="tseid" width="12" title="Enter your name" style="color: gold; background-color: rgb(38, 38, 38);" maxlength="22" setvalue(this)"="">
+//-->
+
+ 
+<TD>  
+<B>TSE Name</B>
+<SELECT name="tseid" style="color: gold; background-color: rgb(38, 38, 38);" 
+      onblur="setValue(this)" selected="" na"="">[Select OS]	 <OPTION value="Rohan Rao">Rohan Rao</OPTION>	
+	  
+
+      	</TD>
+	<td>
+		<input type="button" value=" TIME" style="font-face: 'Comic Sans MS'; color: #FFFFFF; background-color: #101010; border: 1pt ridge #FFFFFF; cursor:pointer;" name="environment" language="javascript" onclick="timenow();"/>
+		<INPUT TYPE="text" NAME="the_time" SIZE="25" title="Current Time" style="background-color:#101010;color:#42FF00;>
+		<input type="button" value="" name="environment" language="javascript"/></td>
+
+
+</tr>
+</TD>
+</table>
+<table BORDER =1 CELLPADDING=5 width="994" align="center" <tr>
+
+	<td>
+		<B>Customer Name:</B> <input TYPE="text" name ="custname" style="background-color:#101010;color:#0cff14; title="Enter Customer's Name" SIZE="30" > 
+	</td>
+	
+	<td>
+		<B>Phone No:</B> <input TYPE="text" name ="phoneno" style="background-color:#101010;color:#0cff14; title="Enter Customer's Phone No" SIZE="25" >
+	</td>
+	
+
+
+</tr>
+</table>
+
+
+
+
+
+
+<!--
+**********************************************************************************************
+**********************************************************************************************
+**********************************************************************************************
+***************		Collecting Environment Details 				**************
+**********************************************************************************************
+**********************************************************************************************
+**********************************************************************************************
+//-->
+
+<table BORDER =1 CELLPADDING=5 width="994" align="center">
+
+
+
+</table>
+
+<!--
+**********************************************************************************************
+**********************************************************************************************
+********************	Log Details	**************************************
+**********************************************************************************************
+**********************************************************************************************
+//-->
+
+
+<table BORDER =1 CELLPADDING=5 width="994" align="center">
+
+</table>
+
+<!--
+**********************************************************************************************
+**********************************************************************************************
+********************	ISSUE REPORTED BY THE CUSTOMER	**************************************
+**********************************************************************************************
+**********************************************************************************************
+//-->
+
+
+<table BORDER =1 CELLPADDING=5 width="994" align="center">
+<tr>
+
+	<td>
+	<B> </B> 
+	<B>Case Subject:</B> 
+	<h1> </h1>
+	<input name="sepissue" style="background-color:#101010;color:#0cff14; title="Enter the abstract of the Issue" type="text" size="117" maxlength="250" onBlur="change_case();setValue(this);">
+
+	</td>
+
+</tr>
+
+</table>
+
+<table BORDER =1 CELLPADDING=5 width="994" align="center">
+
+<tr>
+	<td>
+		<br>
+		<strong>Issue Description: </strong>
+		<br>
+		<br>
+	</td>
+
+	<td>
+		<textarea rows="2" cols="103" name="sep_customer_report" style="background-color:#101010;color:#0cff14; onblur="setValue(this)"></textarea>
+				
+	</td>
+		
+</tr>
+</table>
+
+
+<!--
+************************************************************************************************
+************************************************************************************************
+************************	THE TROUBLESHOOTING WINDOW	********************************	
+************************************************************************************************
+************************************************************************************************
+//-->
+
+<table BORDER =1 CELLPADDING=5 width="994" align="center" >
+<tr>
+	<td>
+		<strong>Troubleshooting Steps:</strong>
+		<input type="button" value=" Action/Result"style="font-face: 'Comic Sans MS'; color: #fcfcfc; background-color: #101010; border: 1pt ridge #fcfcfc; cursor:pointer;" name="environment" language="javascript" onclick="add_action_result();"/>
+		<input value="Reset All" type="reset" name="Reset" style="font-face: 'Comic Sans MS'; color: #fcfcfc; background-color: #101010; border: 1pt ridge #fcfcfc; cursor:pointer;"> 
+
+	<br>
+	</td>
+</tr>
+
+
+<tr>
+	<td>
+		<textarea rows="18" cols="119" name="septrouble" style="background-color:#101010;color:#0cff14 ; onblur="setValue(this)"></textarea>
+				
+	</td>
+		
+
+</tr>
+
+</table>
+
+
+
+<!--
+************************************************************************************************
+************************************************************************************************
+************************	RESOLUTION SUMMARY	****************************************	
+************************************************************************************************
+************************************************************************************************
+//-->
+
+
+<table BORDER =1 CELLPADDING=5 width="994" align="center">
+<tr>
+	<td>
+		<strong>Resolution Summary:</strong>
+
+	<br>
+	</td>
+</tr>
+
+
+<tr>
+	<td>
+		<textarea rows="8" cols="119" name="resummary" style="background-color:#101010;color:#0cff14; onblur="setValue(this)"></textarea>
+				
+	</td>
+		
+
+</tr>
+</Table>
+
+
+
+<!--
+************************************************************************************************
+************************************************************************************************
+***********************	Zoom, KB, Case Status and Next Contact		************************
+************************************************************************************************
+************************************************************************************************
+//-->
+
+
+<table BORDER =1 CELLPADDING=5 width="994" align="center">
+<tr>
+
+	
+</tr>
+
+
+</table>
+
+
+</form>
+
+
+
+
+
+<!--
+////////////////////////////////////////////////////////////////////////////////////////////////
+************************************************************************************************
+************************************************************************************************
+************************	END OF FORM 1	************************************************
+************************************************************************************************
+************************************************************************************************
+////////////////////////////////////////////////////////////////////////////////////////////////
+//-->
+
+
+
+<br>
+
+
+
+<!--
+////////////////////////////////////////////////////////////////////////////////////////////////
+************************************************************************************************
+************************************************************************************************
+************************	FORM 2		************************************************
+************************************************************************************************
+////////////////////////////////////////////////////////////////////////////////////////////////
+//-->
+
+
+<form name="form2" method="post"  enctype="text/plain" >
+
+
+
+<!--
+////////////////////////////////////////////////////////////////////////////////////////////////
+************************************************************************************************
+************************************************************************************************
+************************	TEMPLATE BUTTONS		********************************
+************************************************************************************************
+////////////////////////////////////////////////////////////////////////////////////////////////
+//-->
+
+
+
+
+
+
+
+
+
+
+<!--
+////////////////////////////////////////////////////////////////////////////////////////////////
+************************************************************************************************
+***********************		TEMPLATE RESULT WINDOW		********************************
+************************************************************************************************
+////////////////////////////////////////////////////////////////////////////////////////////////
+//--><table BORDER =1 CELLPADDING=5 width="994" align="center">
+<tr>
+	<td>
+		<strong>Choose the following Templates:</strong>
+		<br>
+		<br>
+		
+		<input onclick="callinteraction()" type="button" value="Call-Interaction" style="font-face: 'Comic Sans MS'; color: #fcfcfc; background-color: #101010; border: 1pt ridge #fcfcfc; cursor:pointer;">
+		<input onclick="voicemailtemplate()" type="button" value="Voicemail" style="font-face: 'Comic Sans MS'; color: #fcfcfc; background-color: #101010; border: 1pt ridge #fcfcfc; cursor:pointer;">
+		<input onclick="novoicemailtemplate()" type="button" value=" No Voicemail " style="font-face: 'Comic Sans MS'; color: #fcfcfc; background-color: #101010; border: 1pt ridge #fcfcfc; cursor:pointer;">
+		<input onclick="frtemail()" type="button" value="(FRT) Email-Customer" style="font-face: 'Comic Sans MS'; color: #42FF00; background-color: #101010; border: 1pt ridge #42FF00; cursor:pointer;">
+		<input onclick="caseclosure()" type="button" value="CASE CLOSURE EMAIL" style="font-face: 'Comic Sans MS'; color: #ffee56; background-color: #101010; border: 1pt ridge #ffee56; cursor:pointer;">
+		
+<br>
+		<br>
+	
+<!--		<input onclick="Ice()" type="button" value="Issue Known" style="font-face: 'Comic Sans MS'; color: #42FF00; background-color: #101010; border: 1pt ridge #42FF00; cursor:pointer;">
+		<input onclick="GetDetails()" type="button" value="Issue Unknown" style="font-face: 'Comic Sans MS'; color: #42FF00; background-color: #101010; border: 1pt ridge #42FF00; cursor:pointer;">
+	<input onclick="CONSUL()" type="button" value="Consulting" style="font-face: 'Comic Sans MS'; color: #42FF00; background-color: #101010; border: 1pt ridge #42FF00; cursor:pointer;">
+
+//-->	
+	<input onclick="WEBINVITE()" type="button" value="ZOOM MEETING" style="font-face: 'Comic Sans MS'; color: #42FF00; background-color: #101010; border: 1pt ridge #42FF00; cursor:pointer;">
+		<input onclick="Chaser1()" type="button" value="Chaser 1 Email" style="font-face: 'Comic Sans MS'; color: #42FF00; background-color: #101010; border: 1pt ridge #42FF00; cursor:pointer;">
+		<input onclick="Chaser2()" type="button" value="Chaser 2 Email" style="font-face: 'Comic Sans MS'; color: #42FF00; background-color: #101010; border: 1pt ridge #42FF00; cursor:pointer;">
+		<input onclick="Chaser3()" type="button" value="Chaser 3 Email" style="font-face: 'Comic Sans MS'; color: #42FF00; background-color: #101010; border: 1pt ridge #42FF00; cursor:pointer;">
+		<input onclick="locremail()" type="button" value="LOCR Closure-Email" style="font-face: 'Comic Sans MS'; color: #ffee56; background-color: #101010; border: 1pt ridge #ffee56; cursor:pointer;">
+		<input onclick="customemail()" type="button" value="CUSTOM EMAIL" style="font-face: 'Comic Sans MS'; color: #00FFFF; background-color: #101010; border: 1pt ridge #00FFFF; cursor:pointer;">
+		
+<br>
+	</td>
+</tr>
+
+
+</table>
+
+
+
+
+
+
+<!--
+////////////////////////////////////////////////////////////////////////////////////////////////
+************************************************************************************************
+***********************		TEMPLATE RESULT WINDOW		********************************
+************************************************************************************************
+////////////////////////////////////////////////////////////////////////////////////////////////
+//-->
+
+
+<table border="1" cellpadding="5" width="994" align="center" >
+<tr>
+	<td>
+		<br>
+		<strong>Template Result Window: </strong>
+		<br><br><textarea rows="25" cols="119" spellcheck="true" name="sepcasenote"  style="background-color:#101010;color:#fcfcfc;onblur="setValue(this)"></textarea> 
+		<br>
+		<p>
+
+		<input type = reset value="Reset Template Window" name=Reset style="font-face: 'Comic Sans MS'; color: #fcfcfc; background-color: #101010; border: 1pt ridge #fcfcfc; cursor:pointer;">
+		<!input type = reset value="Save page" name=Save>
+		
+		<br>
+		</p>
+		
+	</td>
+	
+</tr>
+
+
+</table>
+
+</form>
+
+
+
+<!--
+////////////////////////////////////////////////////////////////////////////////////////////////
+************************************************************************************************
+************************************************************************************************
+************************	END OF FORM 2	************************************************
+************************************************************************************************
+////////////////////////////////////////////////////////////////////////////////////////////////
+//-->
+
+
+
+
+
+	<!--
+	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+	++	The floating window is generated here. this code will make the window static on	  ++
+	++	the page using the <div> and <layer> tag so that the box remains fixated to the   ++
+	++	co-ordinates in the page oblivious to the scrolling.				  ++
+	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+	//-->
+	<script>
+		if (!document.layers)
+		document.write('<div id="divStayTopLeft" style="position:absolute">')
+	</script>
+
+	
+	
+<script type="text/javascript">
+	/*******************************************************************************************
+	 ****		Floating Menuscript - Puts up the script on the lower left corner	****
+	 *******************************************************************************************/
+	
+	//Enter "frombottom" or "fromtop" for fixing your position of reference.
+	
+	var verticalpos="frombottom"
+	
+	if(!document.layers)
+	document.write('</div>') 
+	
+	function JSFX_FloatTopDiv() 
+	{ 
+		//****************************************************************************************
+		//** The value of startX will position the window on the right or left side of the 	**
+		//** screen. Higher the value, further on the right will the menu appear. The  		**
+		//** value of startY will determine the position of the box on the screen. If you 	**
+		//** have a large number of menu to be filled in the script, change the value of 	**
+		//** startY to accomodate the menu on screen.Do not change any values thereafter.	**
+		//****************************************************************************************
+		var startX = 1050,
+		startY = 450;
+		var ns = (navigator.appName.indexOf("Netscape") != -1);
+		var d = document;
+		function ml(id)
+		{
+			var el=d.getElementById?d.getElementById(id):d.all?d.all[id]:d.layers[id];
+			if(d.layers)el.style=el;
+
+			el.sP=function(x,y){this.style.left=x;this.style.top=y;};
+			el.x = startX;
+			if (verticalpos=="fromtop")
+			el.y = startY;
+			else
+			{
+				el.y = ns ? pageYOffset + innerHeight : document.body.scrollTop + document.body.clientHeight;
+				el.y -= startY;
+			}
+			return el;
+		}
+		window.stayTopLeft=function()
+		{
+			if (verticalpos=="fromtop")
+			{
+				var pY = ns ? pageYOffset : document.body.scrollTop;
+				ftlObj.y += (pY + startY - ftlObj.y)/8;
+			}
+			else
+			{
+				var pY = ns ? pageYOffset + innerHeight : document.body.scrollTop + document.body.clientHeight;
+				ftlObj.y += (pY - startY - ftlObj.y)/8;
+			}
+			ftlObj.sP(ftlObj.x, ftlObj.y);
+			setTimeout("stayTopLeft()", 10);
+		}
+		ftlObj = ml("divStayTopLeft");
+		stayTopLeft();
+	} 
+
+<!-- The following command is used to invoke the floating menuscript. DO NOT CHANGE or EDIT THIS-->
+JSFX_FloatTopDiv(); 
+
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+/***********************************************************************************************
+//////////////////////////////////////DO NOT EDIT BELOW THIS LINE.\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+************************************************************************************************/
+
+<script type="text/javascript">
+
+  if(sepcaseid = getCookie("sepcaseid")) document.forms[0].sepcaseid.value = sepcaseid;
+  
+</script>
+
+</script>
+
+</body>
+
+
+</html> 
